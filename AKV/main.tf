@@ -42,6 +42,6 @@ resource "azurerm_key_vault" "example" {
   }
 
   tags = {
-    environment = "Testing"
+    environment = "azureforall"
   }
 }
