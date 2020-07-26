@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azureforallnginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: azureforallnginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: azureforallnginx
+    spec:
+      containers:
+      - image: azureforallacr.azurecr.io/demo/azureforallnginx:latest
+        name: azureforallnginx
+        ports:
+        - containerPort: 80
